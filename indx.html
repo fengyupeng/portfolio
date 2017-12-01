@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>chrisfeng.com</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--bootstrap stuff-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- loads jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- handlebars -->
+  <script src="lib/handlebars-v4.0.11.js"></script>
+  <!--jquery color-->
+  <script src="lib/jcolor.js"></script>
+  <!--The following line loads in your JS script-->
+  <script src="scripts/script.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <style>
+    /*load in some font*/
+    @font-face {
+        font-family: Avenir;
+        src: url('font/AvenirLTStd-Book.otf');
+        font-weight: book;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Avenir;
+        src: url('font/AvenirLTStd-Light.otf');
+        font-weight: light;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Avenir;
+        src: url('font/Avenir-black.ttf');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    body {
+        /*font:  Montserrat, sans-serif;*/
+        font-family: Avenir;
+        background-color: black;
+        color: white;
+    }
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .intro_para {
+        padding-right: 1%;
+        font-size: 1.5em;
+        line-height: 1.8em;
+        padding-bottom: 20em;
+    }
+
+    #project-container {
+        width: 80%;
+    }
+
+    .project-btn{
+        color:white; 
+        background-color:#1F1F1F; 
+        border:none; 
+        border-radius:0px; 
+        font-weight:bold; 
+        font-size:15px; 
+        padding: 14px 40px;
+        -webkit-transition-duration: 0.5s;
+    }
+
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      padding: 25px;
+      color:#505050;
+    }
+  </style>
+</head>
+<body>
+    <div class ="container">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+              </button>
+              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a id="work_btn">WORK</a></li>
+                <li><a href="#">PLAY</a></li>
+                <li><a href="#">MYSELF</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">CONTACT</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+    </div>
+
+    <div class="container intro">    
+        <div class="row">
+            <div class = "col-sm-6 intro_para" style="color: #ffffff;">
+                <h2>Chris Feng</h2>
+                <p>I am a senior at Carnegie Mellon University, majoring in Human Computer Interaction, Electrical Engineering and minoring in Design. I worked at Bizy, LLC. as a Design Intern in summer 2016. Learn more about my WORK, PLAY and MYSELF.</p>
+            </div>
+            <div class = "col-sm-6">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container" id = "project-container">       
+        </div>
+    </div>
+
+    <script id="project-template" type="text/x-handlebars-template">
+    {{#each work}}
+        <div class="row product-detail" style="padding:80px 10px;"id = {{ id }}>
+            <div class="col-sm-6">
+                <h2 style=" font-weight: bold; font-size: 40px; margin-bottom:5px;">{{name}}</h2>
+                <p style="color:#9B9B9B; font-size: 16px; padding-top: 0px;">{{type}}</p>
+                <p style="color:#696969; font-family:Baskerville serif; font-size:25px; padding-right:20px; padding-bottom:30px;">{{description}}</p>
+                <button type="button" class="btn btn-default project-btn" href={{link}}>{{btn_words}}</button>
+            </div>
+            <div class="col-sm-6">
+                <img style="width:100%;"src={{ img }}>
+            </div>
+        </div>
+    {{/each}}
+    </script>
+
+
+<footer class="container-fluid text-center">
+    &copy; 2017 Chris Feng. All Rights Reserved.
+</footer>
+
+</body>
+</html>
