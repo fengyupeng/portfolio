@@ -19,7 +19,7 @@ var projects = {
             "name": "Expressive Bubble",
             "type": "Motion Graphics",
             "description": "A motion graphics art project made with the P5 library",
-            "link": "#",
+            "link": "html/coming_soon.html",
             "btn_words": "I'm feeling emotional",
             "img": "img/project_img/1.png"
         },
@@ -28,7 +28,7 @@ var projects = {
             "name": "Nothing",
             "type": "Branding & Graphic Design",
             "description": "A luxury brand started, designed and crafted my Chris Feng",
-            "link": "#",
+            "link": "html/coming_soon.html",
             "btn_words": "$9999",
             "img": "img/project_img/2.png"
         }
@@ -49,7 +49,7 @@ var projects = {
             "name": "Paintings & Drawings",
             "type": "Arts",
             "description": "Pretty self explanatory right?",
-            "link": "#",
+            "link": "html/coming_soon.html",
             "btn_words": "Feeling Artsy",
             "img": "img/project_img/4.png"
         },
@@ -58,7 +58,7 @@ var projects = {
             "name": "Chelsea Cookie",
             "type": "Graphic Design",
             "description": "Logo and package design for Chelsea Cookie Company, New York",
-            "link": "#",
+            "link": "html/coming_soon.html",
             "btn_words": "Yuuuuuuummy!",
             "img": "img/project_img/5.png"
         }
