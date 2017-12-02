@@ -95,5 +95,6 @@ function transition_dark_to_light() {
     $("body").css("color","black");
     $(".intro_para").animate({ opacity: 0}, 1000);
     $(".navbar").attr("class", "navbar navbar-default");
+    $("#defaultCanvas0").fadeOut(1000);
 }
 
