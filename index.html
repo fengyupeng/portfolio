@@ -68,8 +68,36 @@
         padding-bottom: 20em;
     }
 
-    #project-container {
+    .project-container {
         width: 80%;
+    }
+
+    .project-detail {
+      padding: 120px 10px;
+    }
+
+    .project-detail h2 {
+      font-weight: bold; 
+      font-size: 40px; 
+      margin-bottom: 5px;
+    }
+
+    .project-detail p.type {
+      color:#9B9B9B; 
+      font-size: 16px; 
+      padding-top: 0px;
+    }
+
+    .project-detail p.description {
+      color:#696969; 
+      font-family:Baskerville serif; 
+      font-size:25px; 
+      padding-right:20px; 
+      padding-bottom:30px;
+    }
+
+    .project-image {
+      width: 100%;
     }
 
     .project-btn{
@@ -108,12 +136,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
               </button>
-              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span></a>
+              <a id="intro_btn" class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li><a id="work_btn">WORK</a></li>
-                <li><a href="#">PLAY</a></li>
+                <li><a id="work_btn" href="#">WORK</a></li>
+                <li><a id="play_btn" href="#">PLAY</a></li>
                 <li><a href="#">MYSELF</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
@@ -137,21 +165,41 @@
     </div>
 
     <div class="container">
-        <div class="container" id = "project-container">       
+        <div class="container project-container" id = "work-container">       
+        </div>
+        <div class="container project-container" id = "play-container">       
+        </div>
+        <div class="container project-container" id = "myself-container">       
         </div>
     </div>
 
-    <script id="project-template" type="text/x-handlebars-template">
+    <script class= "project-template" id = "work-template" type="text/x-handlebars-template">
     {{#each work}}
-        <div class="row product-detail" style="padding:80px 10px;"id = {{ id }}>
+        <div class="row project-detail" id = {{ id }}>
             <div class="col-sm-6">
-                <h2 style=" font-weight: bold; font-size: 40px; margin-bottom:5px;">{{name}}</h2>
-                <p style="color:#9B9B9B; font-size: 16px; padding-top: 0px;">{{type}}</p>
-                <p style="color:#696969; font-family:Baskerville serif; font-size:25px; padding-right:20px; padding-bottom:30px;">{{description}}</p>
-                <button type="button" class="btn btn-default project-btn" href={{link}}>{{btn_words}}</button>
+                <h2>{{name}}</h2>
+                <p class = "type">{{type}}</p>
+                <p class = "description">{{description}}</p>
+                <a href= {{link}}><button type="button" class="btn btn-default project-btn">{{btn_words}}</button></a>
             </div>
             <div class="col-sm-6">
-                <img style="width:100%;"src={{ img }}>
+                <img class = "project-image" src={{ img }}>
+            </div>
+        </div>
+    {{/each}}
+    </script>
+
+    <script class= "project-template" id = "play-template" type="text/x-handlebars-template">
+    {{#each play}}
+        <div class="row project-detail" id = {{ id }}>
+            <div class="col-sm-6">
+                <h2>{{name}}</h2>
+                <p class = "type">{{type}}</p>
+                <p class = "description">{{description}}</p>
+                <a href= {{link}}><button type="button" class="btn btn-default project-btn">{{btn_words}}</button></a>
+            </div>
+            <div class="col-sm-6">
+                <img class = "project-image" src={{ img }}>
             </div>
         </div>
     {{/each}}

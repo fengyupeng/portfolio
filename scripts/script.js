@@ -10,7 +10,7 @@ var projects = {
             "name": "LiGo",
             "type": "UX Design",
             "description": "A mobile app for college students to post and navigate through events on campus",
-            "link": "#",
+            "link": "html/ligo.html",
             "btn_words": "Li's Go!",
             "img": "img/project_img/0.png"
         },
@@ -40,7 +40,7 @@ var projects = {
             "name": "I am a Poster",
             "type": "Art & Graphic Design",
             "description": "A series of welf-aware posters",
-            "link": "#",
+            "link": "html/poster.html",
             "btn_words": "Burn Me!",
             "img": "img/project_img/3.png"
         },
@@ -70,8 +70,12 @@ var projects = {
 $(document).ready(function(){
 
     // do not show project at first
-    $("#project-container").display = "none";
+    $(".project-container").display = "none";
     page = "intro";
+
+    $("#intro_btn").click(function() {
+        location.reload();
+    })
 
     $("#work_btn").click(function(){
         if (page == "work") return;
@@ -80,12 +84,33 @@ $(document).ready(function(){
         // transition
         transition_dark_to_light();
         // append the projects
-        var source = $("#project-template").html();
+        var source = $("#work-template").html();
         var template = Handlebars.compile(source);
         var newHTML = template(projects);
-        $("#project-container").append(newHTML);
-        $("#project-container").show(1000);
+        $("#work-container").append(newHTML);
+        $("#work-container").show(1000, function() {
+            noLoop();
+            $("#defaultCanvas0").remove();
+        });
     });
+
+    $("#play_btn").click(function(){
+        if (page == "play") return;
+        page = "play";
+        $(".container.intro").slideUp(1000);
+        // transition
+        transition_dark_to_light();
+        // append the projects
+        var source = $("#play-template").html();
+        var template = Handlebars.compile(source);
+        var newHTML = template(projects);
+        $("#play-container").append(newHTML);
+        $("#play-container").show(1000, function() {
+            noLoop();
+            $("#defaultCanvas0").remove();
+        });
+    });
+
 });
 
 function transition_dark_to_light() {

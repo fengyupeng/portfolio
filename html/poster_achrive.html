@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="http://www.chrisfeng.com/favicon.ico">
+    <title>chrisfeng.com</title>
+	<link rel="stylesheet" href="../css/poster_achrive.css">
+    <meta charset="UTF-8" />
+	<style>
+	#forwardButton { margin-left: 82%; margin-top: 95%; display: block;
+		 width:100px; height: 150px; background-image: url(../img/poster/button.png);
+		 background-repeat: no-repeat;}
+	#backwardButton {  margin-left: 2%; margin-top: 95%; display: block;
+		width:100px; height: 150px; background-image: url(../img/poster/button2.png);
+		background-repeat: no-repeat;position: absolute;}
+	</style>
+</head>
+<body onload="centerImage();">
+	<div class = "header">
+
+	</div>
+	<div class = "intro">
+		<p>I AM A POSTER is one of my personal art/graphic design projects.
+			It's goal is to remind people of their self-awareness and to be
+			themselves. Because of the overwhelming popularity of computer
+			science and related disciplines and the overall career-oriented
+			culture, more and more students switch their major into computer
+			science and related fields; clubs and events related to personal
+			interests and spiritual life receive very little attention and
+			support. To remind people to always be themselves and value their
+			own characteristics, personalities, interests, hobbies and aspiration,
+			I designed a series of "self-aware" posters showing off their
+			individuality and personality. I printed out hundreds of
+			these posters and put them everywhere on campus. Immediately,
+			this project received a lot of attention and feedback.
+			As putting posters on places other than poster boards is not allowed
+			at Carnegie Mellon, I left a fake name Christopher Fungunaski on
+			each poster.
+		</p>
+	</div>
+	<div class = "first">
+		<p class= "title" >Posters proud of their uniqueness.</p>
+		<img src="../img/poster/firstPosters.jpg">
+		<img src="../img/poster/firstPost.jpg">
+	</div>
+
+	<div class = "second">
+		<p class= "title" >I then made a series of posters self-aware of their
+			physical location and post them in the corresponding buldings on
+			campus to remind people to be aware of their position.
+		</p>
+		<img src="../img/poster/secondPosters.jpg">
+		<img src="../img/poster/secondPost.jpg">
+	</div>
+
+	<div class = "third">
+		<p class= "title" >Posters self-aware of their color, reminding people
+			to value their personal identity and individuality.
+		</p>
+		<img src="../img/poster/thirdPosters.png">
+	</div>
+
+	<div class = "forth">
+		<p class= "title" >Posters self-aware of their color, reminding people
+			to value their personal identity and individuality.
+		</p>
+	</div>
+
+	<div class = "fifth">
+		<img src="../img/poster/IamaPoster.png">
+	</div>
+
+
+	<div id="photoSection">
+	<img  id='photo' src='../img/poster/1.jpg' alt='photo' />
+		<div id="caption">
+
+		</div>
+	<div id="forwardOverlay">
+		<a id = "forwardButton" ></a>
+	</div>
+	<div id="backwardOverlay">
+		<a id = "backwardButton" ></a>
+	</div>
+	</div>
+<script>
+"use strict";
+var index = 0;
+window.addEventListener("resize",centerImage,false);
+document.getElementById("forwardOverlay").addEventListener("click", rightClick, false);
+document.getElementById("backwardOverlay").addEventListener("click", leftClick, false);
+
+var photoArray = [
+		{filename: "../img/poster/1.jpg"},
+		{filename: "../img/poster/2.jpg"},
+		{filename: "../img/poster/3.jpg"},
+		{filename: "../img/poster/4.jpg"},
+		{filename: "../img/poster/5.jpg"},
+		{filename: "../img/poster/6.jpg"},
+		{filename: "../img/poster/7.jpg"},
+		{filename: "../img/poster/8.jpg"},
+		{filename: "../img/poster/9.jpg"},
+		{filename: "../img/poster/10.jpg"},
+		,
+	];
+
+	function centerImage(){
+		/*var caption = document.getElementById("caption");
+		caption.style.width="800px";
+		caption.style.textAlign="center";
+		caption.style.position="absolute";
+		caption.style.bottom="0px";*/
+		var photoSec = document.getElementById('photoSection');
+		photoSec.style.position="absolute";
+		photoSec.style.top=window.innerHeight+3550+"px";
+		photoSec.style.left=window.innerWidth/2-500+"px";
+		var Right = document.getElementById("forwardOverlay");
+		Right.style.position="absolute";
+		Right.style.right="0px";
+		Right.style.top="0px";
+		Right.style.boxSizing="border-box";
+
+		Right.style.opacity="1";
+		Right.style.width="400px";
+		Right.style.height="842px";
+		var Left = document.getElementById("backwardOverlay");
+		Left.style.position="absolute";
+		Left.style.left="0px";
+		Left.style.top="0px";
+		Left.style.boxSizing="border-box";
+
+		Left.style.opacity="1";
+		Left.style.width="400px";
+		Left.style.height="842px";
+	}
+function leftClick(){
+	if (index == 0) index = 9;
+	else index-=1;
+
+	document.getElementById("photo").src=photoArray[index].filename;
+
+
+}
+function rightClick(){
+	if (index == 9) index = 0;
+	else index+=1;
+
+	document.getElementById("photo").src=photoArray[index].filename;
+}
+
+
+</script>
+<footer>
+	&copy; 2016 Chris Feng. All Rights Reserved.
+</footer>
+</body>
+</html>
