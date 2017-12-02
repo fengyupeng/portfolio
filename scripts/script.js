@@ -111,6 +111,10 @@ $(document).ready(function(){
         });
     });
 
+    $("#suprised").hover(function(){
+        addNewOval();
+    });
+
 });
 
 function transition_dark_to_light() {
@@ -122,4 +126,5 @@ function transition_dark_to_light() {
     $(".navbar").attr("class", "navbar navbar-default");
     $("#defaultCanvas0").fadeOut(1000);
 }
+
 

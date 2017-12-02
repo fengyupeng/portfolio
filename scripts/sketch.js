@@ -167,6 +167,10 @@ Oval.prototype.update = function() {
 }
 
 function mouseClicked() {
+    addNewOval();
+}
+
+function addNewOval() {
     var oval = new Oval(mouseX, mouseY);
     ovalList.push(oval);
 }
