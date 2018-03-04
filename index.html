@@ -22,43 +22,68 @@
 
   <!--The following line loads in your JS script-->
   <script src="scripts/script.js"></script>
+  <!-- load in my own style sheet -->
+  <link rel="stylesheet" href="style/main.css">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <style>
-    /*load in some font*/
-    @font-face {
-        font-family: Avenir;
-        src: url('font/AvenirLTStd-Book.otf');
-        font-weight: book;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Avenir;
-        src: url('font/AvenirLTStd-Light.otf');
-        font-weight: light;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Avenir;
-        src: url('font/Avenir-black.ttf');
-        font-weight: bold;
-        font-style: normal;
-    }
 
+  <!--
+  A wise man named Socrates once said people who view the source code of a 
+  portfolio website are angels in their previous life. Thank you, angel!
+
+  
+quu..__
+ $$$b  `---.__
+  "$$b        `--.                          ___.---uuudP
+   `$$b           `.__.------.__     __.---'      $$$$"              .
+     "$b          -'            `-.-'            $$$"              .'|
+       ".                                       d$"             _.'  |
+         `.   /                              ..."             .'     |
+           `./                           ..::-'            _.'       |
+            /                         .:::-'            .-'         .'
+           :                          ::''\          _.'            |
+          .' .-.             .-.           `.      .'               |
+          : /'$$|           .@"$\           `.   .'              _.-'
+         .'|$u$$|          |$$,$$|           |  <            _.-'
+         | `:$$:'          :$$$$$:           `.  `.       .-'
+         :                  `"--'             |    `-.     \
+        :##.       ==             .###.       `.      `.    `\
+        |##:                      :###:        |        >     >
+        |#'     `..'`..'          `###'        x:      /     /
+         \                                   xXX|     /    ./
+          \                                xXXX'|    /   ./
+          /`-.                                  `.  /   /
+         :    `-  ...........,                   | /  .'
+         |         ``:::::::'       .            |<    `.
+         |             ```          |           x| \ `.:``.
+         |                         .'    /'   xXX|  `:`M`M':.
+         |    |                    ;    /:' xXXX'|  -'MMMMM:'
+         `.  .'                   :    /:'       |-'MMMM.-'
+          |  |                   .'   /'        .'MMM.-'
+          `'`'                   :  ,'          |MMM<
+            |                     `'            |tbap\
+             \                                  :MM.-'
+              \                 |              .''
+               \.               `.            /
+                /     .:::::::.. :           /
+               |     .:::::::::::`.         /
+               |   .:::------------\       /
+              /   .''               >::'  /
+              `',:                 :    .'
+                                   `:.:' 
+-->
+
+  <style>
     body {
         /*font:  Montserrat, sans-serif;*/
         font-family: Avenir;
         background-color: black;
         color: white;
     }
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        border-radius: 0;
-        border: 0;
-        background-color: transparent;
-        font-size: 1.2em;
-        font-weight: bold;
+
+    @media (min-width: 1200px) {
+      .container {
+        width: 1200px;
+      }
     }
 
     .intro_para {
@@ -70,7 +95,8 @@
 
     .project-container {
         width: 80%;
-        display: none
+        display: none;
+        margin-bottom:150px;
     }
 
     .project-detail {
@@ -79,8 +105,8 @@
 
     .project-detail h2 {
       font-weight: bold; 
-      font-size: 40px; 
-      margin-bottom: 5px;
+      font-size: 35px; 
+      margin-bottom: 5px
     }
 
     .project-detail p.type {
@@ -92,7 +118,7 @@
     .project-detail p.description {
       color:#696969; 
       font-family:Baskerville serif; 
-      font-size:25px; 
+      font-size:22px; 
       padding-right:20px; 
       padding-bottom:30px;
     }
@@ -123,18 +149,17 @@
       color: black;
     }
 
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      padding: 25px;
-      color:#505050;
+    .intro a {
+      color: white;
     }
+
+  
   </style>
 </head>
 <body>
     <div class ="container">
         <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
+          <div class="container-fluid" style = "padding-left: 0;">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -145,12 +170,12 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li><a class = "nav-btn" id="work_btn" href="#">WORK</a></li>
-                <li><a class = "nav-btn" id="play_btn" href="#">PLAY</a></li>
-                <li><a class = "nav-btn" id="myself_btn" href="#">MYSELF</a></li>
+                <li><a class = "nav-btn work_btn" href="#">WORK</a></li>
+                <li><a class = "nav-btn play_btn" href="#">PLAY</a></li>
+                <!--<li><a class = "nav-btn" id="myself_btn" href="#">MYSELF</a></li>-->
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a id="contact_btn" href="#" data-toggle="modal" data-target="#myModal">CONTACT</a></li>
+                <li><a id="contact_btn" href="resume.pdf" target="_blank">RÉSUMÉ</a></li>
               </ul>
             </div>
           </div>
@@ -162,7 +187,7 @@
         <div class="row">
             <div class = "col-sm-6 intro_para" style="color: #ffffff;">
                 <h2>Chris Feng</h2>
-                <p>I am a senior at Carnegie Mellon University, majoring in Human Computer Interaction, Electrical Engineering and minoring in Design. I worked at Bizy, LLC. as a Design Intern in summer 2016. Learn more about my WORK, PLAY and MYSELF.</p>
+                <p>I am a senior at <a href="http://www.cmu.edu/" class = "link" target="_blank">Carnegie Mellon University</a>, majoring in <a href="https://www.hcii.cmu.edu/" class = "link" target="_blank">Human Computer Interaction</a>, <a href="https://www.ece.cmu.edu/" class = "link" target="_blank">Electrical Engineering</a> and minoring in <a href="https://design.cmu.edu/" class = "link" target="_blank">Design</a>. I worked at <a href="https://bizy.com/" class = "link" target="_blank">Bizy, LLC</a>. as a Design Intern in summer 2016. I am currently looking for an internship opportunity for summer 2018. Learn more about my <a class = "nav-btn work_btn" href="#">WORK</a> and <a class = "nav-btn play_btn" href="#">PLAY</a>.</p>
                 <p style="color:#555555; font-size:0.8em;">Click anywhere on screen to be <b id = "suprised" style="color:#A1A1A1;">surprised</b></p>
             </div>
             <div class = "col-sm-6">
@@ -186,7 +211,7 @@
                 <h2>{{name}}</h2>
                 <p class = "type">{{type}}</p>
                 <p class = "description">{{description}}</p>
-                <a href= {{link}}><button type="button" class="btn btn-default project-btn" data-toggle={{data-toggle}} data-target={{data-target}}>{{btn_words}}</button></a>
+                <a href= {{link}}><button type="button" class="btn btn-default project-btn">{{btn_words}}</button></a>
             </div>
             <div class="col-sm-6">
                 <img class = "project-image" src={{ img }}>
@@ -202,7 +227,7 @@
                 <h2>{{name}}</h2>
                 <p class = "type">{{type}}</p>
                 <p class = "description">{{description}}</p>
-                <a href= {{link}}><button type="button" class="btn btn-default project-btn" data-toggle={{data-toggle}} data-target={{data-target}}>{{btn_words}}</button></a>
+                <a href= {{link}}><button type="button" class="btn btn-default project-btn">{{btn_words}}</button></a>
             </div>
             <div class="col-sm-6">
                 <img class = "project-image" src={{ img }}>
@@ -218,7 +243,7 @@
                 <h2>{{name}}</h2>
                 <p class = "type">{{type}}</p>
                 <p class = "description">{{description}}</p>
-                <a href= {{link}}><button type="button" class="btn btn-default project-btn" data-toggle={{data-toggle}} data-target={{data-target}}>{{btn_words}}</button></a>
+                <a href= {{link}}><button type="button" class="btn btn-default project-btn">{{btn_words}}</button></a>
             </div>
             <div class="col-sm-6">
                 <img class = "project-image" src={{ img }}>
@@ -249,9 +274,7 @@
     </div>
 
 
-<footer class="container-fluid text-center">
-   
-</footer>
-
 </body>
 </html>
+
+
